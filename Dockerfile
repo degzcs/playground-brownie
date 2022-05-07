@@ -18,7 +18,6 @@ WORKDIR /home
 EXPOSE 8545
 
 CMD ["ganache-cli", "-h", "0.0.0.0", "-d"]
-#, "--host 0.0.0.0"]
 
 #
 # Brownie Python
