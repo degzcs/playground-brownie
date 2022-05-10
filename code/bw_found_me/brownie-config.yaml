@@ -16,6 +16,8 @@ networks:
     verify: False
   development:
     verify: False
+  dev:
+    verify: False
   ganache-local:
     verify: False
 wallets:
