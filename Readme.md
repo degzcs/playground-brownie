@@ -18,7 +18,7 @@ $ brownie run deploy.py --network dev
 ## Run tests
 
 ```bash
-$ docker exec -it playground-brownie_bronie-dev_1 bash -c 'cd bw_simple_storage && brownie test --network dev'
+$ docker exec -it playground-brownie_bronie-dev_1 bash -c 'cd bw_simple_storage && brownie test --network test'
 ```
 
 ## Networks

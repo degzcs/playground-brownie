@@ -2,7 +2,7 @@ from brownie import network, config, accounts, MockV3Aggregator
 from web3 import Web3
 
 FORKED_LOCAL_ENVIRONMENTS = ["mainnet-fork", "mainnet-fork-dev"]
-LOCAL_BLOCKCHAIN_ENVIRONMENTS = ["dev", "development", "ganache-local"]
+LOCAL_BLOCKCHAIN_ENVIRONMENTS = ["test", "development", "ganache-local"]
 
 DECIMALS = 8
 STARTING_PRICE = 200000000000
