@@ -16,7 +16,7 @@ networks:
     verify: False
   development:
     verify: False
-  dev:
+  test:
     verify: False
   ganache-local:
     verify: False

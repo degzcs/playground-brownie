@@ -38,7 +38,9 @@ RUN git clone https://github.com/eth-brownie/brownie.git && \
     python3 setup.py install
 
 # Add the other conainer to brownie
-RUN brownie networks add Development dev cmd=ganache-cli host=http://ganache:8545
+RUN brownie networks add Development test cmd=ganache-cli host=http://ganache:8545 && \
+    brownie networks add Ethereum ganache-local host=http://host.docker.internal:7545 chainid=5777 
+
 RUN set -o vi
 
 USER pn

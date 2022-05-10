@@ -23,7 +23,7 @@ $ docker exec -it playground-brownie_bronie-dev_1 bash -c 'cd bw_simple_storage 
 
 ## Networks
 
-The Dockerfile will add the `dev` network to connect to the docker-service called `ganache`.
+The Dockerfile will add the `test` network to connect to the docker-service called `ganache`.
 
 To connect to ganach UI from docker you will have to add this network:
 
