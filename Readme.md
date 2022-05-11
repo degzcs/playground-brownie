@@ -32,3 +32,9 @@ NOTE: the port and chainid can change.
 ```bash
 $  brownie networks add Ethereum ganache-local host=http://host.docker.internal:7545 chainid=5777 
 ```
+
+### Fork networks
+
+``` bash
+$ brownie networks add Development mainnet-fork-dev cmd=ganache-cli host=http://ganache fork=https://eth-mainnet.alchemyapi.io/v2/<api-key-here> accounts=10 mnemonic=brownie port=8545
+```
