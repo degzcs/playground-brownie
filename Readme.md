@@ -38,3 +38,10 @@ $  brownie networks add Ethereum ganache-local host=http://host.docker.internal:
 ``` bash
 $ brownie networks add Development mainnet-fork-dev cmd=ganache-cli host=http://ganache fork=https://eth-mainnet.alchemyapi.io/v2/<api-key-here> accounts=10 mnemonic=brownie port=8545
 ```
+
+to delete and create Mainnet-fork in Development
+
+```bash
+$ brownie networks delete mainnet-fork 
+$ brownie networks add Development mainnet-fork cmd=ganache-cli host=http://ganache fork=https://eth-mainnet.alchemyapi.io/v2/<api-key-here> accounts=10 mnemonic=brownie port=8545
+```

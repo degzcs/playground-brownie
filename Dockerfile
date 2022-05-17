@@ -1,26 +1,5 @@
 #
-# Ganage
-#
-
-FROM node:16-bullseye-slim as ganache
-#FROM nikolaik/python-nodejs:latest as ganache
-
-RUN apt-get update && \
-    apt-get install --no-install-recommends -y \
-        build-essential \
-        python3 && \
-    rm -rf /var/lib/apt/lists/* && \
-    rm -rf /etc/apt/sources.list.d/*
-
-RUN npm install --global --quiet npm ganache-cli
-RUN mkdir -p /home
-WORKDIR /home
-EXPOSE 8545
-
-CMD ["ganache-cli", "-h", "0.0.0.0", "-d"]
-
-#
-# Brownie Python
+# Brownie + Python + GanacheCli
 #
 
 FROM nikolaik/python-nodejs:latest as brownie
@@ -40,6 +19,8 @@ RUN git clone https://github.com/eth-brownie/brownie.git && \
 # Add the other conainer to brownie
 RUN brownie networks add Development test cmd=ganache-cli host=http://ganache:8545 && \
     brownie networks add Ethereum ganache-local host=http://host.docker.internal:7545 chainid=5777 
+    
+RUN npm install ganache --global
 
 RUN set -o vi
 
