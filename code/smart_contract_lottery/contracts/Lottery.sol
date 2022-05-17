@@ -33,15 +33,15 @@ contract Lottery {
 		// NOTE Chainlink says that the price will contain 8 decimals
 		// so we have to multiply this number by (10 ** 10) and we are
 		// going to have 18 decimals at the end (this is a WEI)
-		// ex. 2,000.00000000 (8 decimals) 
-		// -> 2_000_00000000 -> 2_000_000000000000000000 (wei)
+		// ex. 202577000000 (this is the price of 1 Eth in dollars -> 8 decimals)
+		// -> 2_025_77000000 -> 2_025_770000000000000000 (wei)
 		uint256 adjustedPrice = uint256(price) * 10**10;
 		// NOTE we are going to add 18 zeros to the entry dollars fee ($50)
 		// the idea is that those new 18 zeros are going to cancel out 
 		// with the zeros from price
-		// ex. 50_000000000000000000 (isn't this WEI already?)
-		// -> 50_000000000000000000_000000000000000000/2_000_000000000000000000
-		// 50_00000000000000000/2_000 -> 25_0000000000000000 (WEI)
+		// ex. 50_000000000000000000 (this is already wei)
+		// -> 50_000000000000000000_000000000000000000/2_025_770000000000000000 
+		// 50_00000000000000000_00/2_025_77 -> 24547816664031531 (WEI)
 		uint256 costToEnter = (usdEntryFee * 10**18)/adjustedPrice;
 		return costToEnter;
 	}
