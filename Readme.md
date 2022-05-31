@@ -46,3 +46,12 @@ To delete and create Mainnet-fork in Development
 $ brownie networks delete mainnet-fork
 $ brownie networks add Development mainnet-fork cmd=ganache-cli host=http://ganache fork=https://eth-mainnet.alchemyapi.io/v2/<api-key-here> accounts=10 mnemonic=brownie port=8545
 ```
+
+## Accounts
+
+to add a test account like this:
+```bash
+$ brownie accounts new test-account
+## paste the private key
+## add a pass phrase
+```
