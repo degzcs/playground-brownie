@@ -1,7 +1,7 @@
 # Brownie Playground
 Setup Brownie and Ganache
 
-## Install 
+## Install
 ```bash
 $ docker-compose build
 ```
@@ -23,12 +23,12 @@ $ docker-compose run brownie_brownie bash -c 'cd bw_simple_storage && brownie te
 
 ## Networks
 
-The Dockerfile will add some tests networkds, check it out! 
+The Dockerfile will add some tests networks, check it out!
 
 To connect to ganach UI from docker you will have to add this network:
 
 ```bash
-$  brownie networks add Ethereum ganache-local host=http://host.docker.internal:7545 chainid=5777 
+$  brownie networks add Ethereum ganache-local host=http://host.docker.internal:7545 chainid=5777
 ```
 NOTE: the port and chainid could change.
 
@@ -43,6 +43,6 @@ $ brownie networks add Development mainnet-fork-dev cmd=ganache-cli host=http://
 To delete and create Mainnet-fork in Development
 
 ```bash
-$ brownie networks delete mainnet-fork 
+$ brownie networks delete mainnet-fork
 $ brownie networks add Development mainnet-fork cmd=ganache-cli host=http://ganache fork=https://eth-mainnet.alchemyapi.io/v2/<api-key-here> accounts=10 mnemonic=brownie port=8545
 ```

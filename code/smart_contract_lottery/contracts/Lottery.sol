@@ -19,6 +19,7 @@ contract Lottery is VRFConsumerBase, Ownable {
 	uint256 public fee;
 	bytes32 public keyHash;
 	uint256 public randomness;
+	event RequestedRandomness(bytes32 requestId);
 
 	constructor(
 		address _priceFeedAddress,
@@ -82,6 +83,8 @@ contract Lottery is VRFConsumerBase, Ownable {
 		// NOTE this function will start the request-response process
 		bytes32 requestId = requestRandomness(keyHash, fee);
 		// node is going to return the response to a fulfillRandomness function
+		// For testing we are going to emit an event here
+		emit RequestedRandomness(requestId);
 	}
 
 	function fulfillRandomness(bytes32 _requestId, uint256 _randomness) internal override {
